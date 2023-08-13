@@ -1,4 +1,9 @@
 
+.header, .background-horizontal {
+    width: 100vw;
+    min-height: 80vh;
+}
+
 .header {
     background: url('https://picsum.photos/800/1065'), center center, no-repeat;
 }
@@ -15,11 +20,21 @@
     font-size: 2em;
 }
 
-h1 {
-    font-size: 2.9em;
+.box-movie {
+    justify-content: flex-end;
+    height: 480px;
+    padding: 15px;
 }
 
-.info, .h4 {
+h1 {
+    font-size: 2.6em;
+}
+
+.info {
+    font-size: 1.05em;
+}
+
+.h4 {
     font-size: 1.1em;
 }
 
@@ -35,6 +50,6 @@ h1 {
 
 .botton {
     height: 50px;
-    width: 30vw;
+    width: 35vw;
     max-width: 200px;
 }

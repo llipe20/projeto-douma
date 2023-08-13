@@ -15,6 +15,10 @@
     font-size: 2.1em;
 }
 
+.box-movie {
+    padding: 25px;
+}
+
 h1 {
     font-size: 3.5em;
 }
@@ -37,4 +41,12 @@ h1 {
     height: 50px;
     width: 20vw;
     max-width: 200px;
+}
+
+#botton--play:hover {
+    background-color: rgba(255, 255, 255, 0.803);
+}
+
+#botton--list:hover {
+    background-color:  rgba(0, 0, 157, 0.816);
 }
