@@ -9,3 +9,7 @@
 .header {
     background: url('https://picsum.photos/800/1065'), center center, no-repeat;
 }
+
+.nav {
+    max-width: 800px;
+}

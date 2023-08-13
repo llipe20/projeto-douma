@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Merienda:wght@600&family=Open+Sans:wght@300&family=Roboto:wght@400;900&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Open+Sans:wght@300&family=Roboto:wght@400;900&display=swap');
 
 * {
@@ -23,6 +25,7 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100vw;
     min-height: 100vh;
 }
 
@@ -36,3 +39,109 @@ body, html {
 .background-vertical {
     background: linear-gradient(to right, black, rgba(0, 0, 0, 0.434), transparent);
 }
+
+/* NAVEGAÇÃO */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 25px;
+    height: 80px;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav--title-logo, h1 {
+    font: bold 2em 'Roboto', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.463);
+    color: blue;
+}
+
+.nav--foto-logo {
+    border: 3px solid blue;
+}
+
+/* BOX DE INFOMAÇÕES SOBRE FILMES */
+
+.box-movie {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    height: auto;
+    width: 100vw;
+    gap: 10px;
+}
+
+h1 {
+    font-size: 2.9em;
+    color: white;
+}
+
+.box-movie--info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 13px;
+    height: auto;
+    width: auto;
+}
+
+.info, .h4 {
+    font: bold 1.1em 'Roboto', sans-serif;
+    color: white;
+}
+
+#info--ponto {
+    color: rgb(22, 116, 12);
+}
+
+#info--sinopse, #info--genero {
+    color: rgba(255, 255, 255, 0.612);
+    font-weight: normal;
+    text-align: left;
+    line-height: 1.5em;
+    width: 420px;
+    margin: 10px 0;
+}
+
+/* BOTÕES */ 
+
+.box-movie--botton {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        height: auto;
+        width: auto;
+}
+
+.botton {
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.507);
+    height: 50px;
+    width: 160px;
+}
+
+#botton--list {
+    background-color: rgba(0, 0, 0, 0.366);
+    color: white;
+}
+
+#h4--black {
+    color: black;
+}
+
