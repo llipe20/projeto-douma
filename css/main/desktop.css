@@ -1,6 +1,6 @@
 
 .box-title {
-    padding-left: 30px;
+    padding-left: 40px;
     width: 100vw;
 }
 
@@ -10,6 +10,7 @@ h2.title-section {
 
 .botton-absoluto {
     position: absolute;
+    text-align: center;
     background-color: transparent;
     color: white;
     border: none;
@@ -20,7 +21,7 @@ h2.title-section {
 }
 
 .botton-absoluto:hover {
-    font-size: 2.9em;
+    font-size: 2.5em;
     color: rgb(180, 175, 175);
 }
 
@@ -29,15 +30,26 @@ h2.title-section {
 }
 
 #botton-left {
-    left: -2%;
+    left: -3%;
     top: 50%;
 }
 
 #botton-right {
-    left: 92%;
+    left: 93%;
     top: 50%;
 }
 
 a >img:hover {
     transform: scale(0.95);
+}
+
+/* FOOTER */
+
+.paragrafo {
+    font-size: 1.2em;
+}
+
+.paragrafo:hover {
+    color: rgb(180, 175, 175);
+    transform: scale(0.97);
 }

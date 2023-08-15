@@ -23,7 +23,7 @@
     position: relative;
 }
 
-h2.title-section {
+h2.title-section, .paragrafo {
     color: white;
     font-family: 'Roboto', sans-serif;
 }
@@ -46,4 +46,25 @@ ul.box-rolagem-lista {
     flex-wrap: nowrap;
     padding: 5px;
     gap: 10px;
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    width: 90vw;
+    margin: 30px 0px 40px 20px;
+
+}
+
+.paragrafo {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: normal;
 }

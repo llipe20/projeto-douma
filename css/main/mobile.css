@@ -16,3 +16,9 @@ a > img {
 .botton-absoluto {
     display: none;
 }
+
+/* FOOTER */
+
+.paragrafo {
+    font-size: 1em;
+}
