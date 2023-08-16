@@ -43,6 +43,10 @@ ul.box-rolagem-lista {
     width: auto;
 }
 
+li {
+    list-style-type: none;
+}
+
 .box-rolagem-lista::-webkit-scrollbar {
     display: none;
 }
