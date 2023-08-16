@@ -39,8 +39,17 @@ h2.title-section {
     top: 50%;
 }
 
-a >img:hover {
-    transform: scale(0.95);
+ul > li {
+    width: 220px;
+}
+
+a > img {
+    height: 300px;
+    transform: scale(0.9);
+}
+
+a>img:hover {
+    transform: scale(1);
 }
 
 /* FOOTER */

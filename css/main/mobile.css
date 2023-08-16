@@ -8,9 +8,17 @@ h2.title-section {
     font-size: 1.6em;
 }
 
+ul > li {
+    width: 200px;
+}
+
 a > img {
     height: 280px;
-    width: 200px;
+    transform: scale(0.9);
+}
+
+a>img:hover {
+    transform: scale(1);
 }
 
 .botton-absoluto {

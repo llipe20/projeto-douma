@@ -34,18 +34,17 @@ h2.title-section, .paragrafo {
     justify-content: center;
     gap: 10px;
     width: 95vw;
-    overflow-x: auto;
-}
-
-.box-lista-fixa::-webkit-scrollbar {
-    display: none;
 }
 
 ul.box-rolagem-lista {
     display: flex;
     flex-wrap: nowrap;
-    padding: 5px;
-    gap: 10px;
+    overflow-x: auto;
+    width: auto;
+}
+
+.box-rolagem-lista::-webkit-scrollbar {
+    display: none;
 }
 
 /* FOOTER */
