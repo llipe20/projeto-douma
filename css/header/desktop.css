@@ -3,6 +3,10 @@
     background: url('https://picsum.photos/2560/1440'), center center, no-repeat;
 }
 
+.header, .background-horizontal {
+    height: 100vh;
+}
+
 .background-vertical {
     background: linear-gradient(to right, black, rgba(0, 0, 0, 0.367), transparent);
 }
@@ -16,6 +20,7 @@
 }
 
 .box-movie {
+    padding-top: 30px;
     padding-left: 25px;
     justify-content: center;
 }

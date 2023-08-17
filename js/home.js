@@ -18,6 +18,21 @@ var main = document.getElementById("main")
 const listAll = async () => {
     let lista = await Tmdb.getHomeList()
     
+    //  FILME NA HEADER
+
+    // pegando um filme aleatório
+    const filmes = lista[0].movie.results
+    const valor = Math.floor(Math.random() * (filmes.length - 1))
+    const filmeEscolhido = filmes[valor]
+
+    console.log(filmeEscolhido)
+
+    // motando a header
+
+    fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
+
+    // FILMES NAS LISTAS 
+
     for (let i = 0; i < lista.length; i++)
     {
         // CRIANDOO AS TAGS HTML

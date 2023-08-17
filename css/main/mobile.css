@@ -1,25 +1,26 @@
 
 .box-title {
-    padding-left: 10px;
+    padding-left: 20px;
     width: 100vw;
 }
 
+.section-movie {
+   gap: 10px;
+}
+
 h2.title-section {
-    font-size: 1.6em;
+    font-size: 1.5em;
 }
 
 ul > li {
-    width: 200px;
+    width: 150px;
 }
 
 a > img {
     height: 280px;
-    transform: scale(0.9);
+    transform: scale(0.8);
 }
 
-a>img:hover {
-    transform: scale(1);
-}
 
 .botton-absoluto {
     display: none;
