@@ -5,20 +5,25 @@
 }
 
 .section-movie {
-   gap: 10px;
+    gap: 5px;
 }
 
 h2.title-section {
     font-size: 1.5em;
 }
 
+ul.box-rolagem-lista {
+
+    height: auto;
+}
+
 ul > li {
-    width: 150px;
+    width: 130px;
 }
 
 a > img {
-    height: 280px;
-    transform: scale(0.8);
+    height: 200px;
+    transform: scale(0.9);
 }
 
 
