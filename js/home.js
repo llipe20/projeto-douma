@@ -25,9 +25,11 @@ const listAll = async () => {
     const valor = Math.floor(Math.random() * (filmes.length - 1))
     const filmeEscolhido = filmes[valor]
 
-    console.log(filmeEscolhido)
+    // MONTANDO A HEADER
 
-    // motando a header
+    // id do filme
+    const input = document.getElementById("id-filme")
+    input.value = filmeEscolhido.id
 
     fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
 
@@ -55,7 +57,7 @@ const listAll = async () => {
     }
     
     view.textContent = `${filmeEscolhido.popularity} view`
-    
+
 
     // FILMES NAS LISTAS 
 
@@ -77,13 +79,21 @@ const listAll = async () => {
         var boxFixo = document.createElement("div")
         boxFixo.classList.add("box-lista-fixa")
 
-        // botões de rolagem lateral
-        var botton = document.createElement("button")
-        botton.classList.add("botton-absoluto")
+        // botões da esquerda
+        var bottonLeft = document.createElement("button")
+        bottonLeft.classList.add("botton-absoluto","left")
 
-        // emoj dos botões
-        var span = document.createElement("span")
-        span.classList.add("material-symbols-outlined")
+        // botões da direita
+        var bottonRight = document.createElement("button")
+        bottonRight.classList.add("botton-absoluto","right")
+
+        // emoj da esquerda
+        var spanLeft = document.createElement("span")
+        spanLeft.classList.add("material-symbols-outlined")
+
+        // emoj da esquerda
+        var spanRight = document.createElement("span")
+        spanRight.classList.add("material-symbols-outlined")
 
         // box lista -relativo
         var ul = document.createElement("ul")
@@ -96,13 +106,12 @@ const listAll = async () => {
                 boxTitle.appendChild(h2)
                     h2.textContent = (`${lista[i].title}`)
 
-                    console.log(lista[i].movie.results)
-
             section.appendChild(boxFixo)
-                boxFixo.appendChild(botton)     // botão da esqueda
-                    botton.setAttribute("id","botton-left")
-                    botton.appendChild(span)
-                        span.textContent = ("chevron_left")
+                boxFixo.appendChild(bottonLeft)     // botão da esqueda
+                    bottonLeft.setAttribute("id","botton-left")
+                    bottonLeft.appendChild(spanLeft)
+                        spanLeft.textContent = ("chevron_left")
+
                 boxFixo.appendChild(ul)
 
                     for (let x = 0; x < lista[i].movie.results.length; x++)  // add as listas com filmes
@@ -126,13 +135,15 @@ const listAll = async () => {
                                 a.appendChild(img)
                                     img.setAttribute("src",`https://image.tmdb.org/t/p/w300${lista[i].movie.results[x].poster_path}`) 
                     }
-               
-                boxFixo.appendChild(botton)     // botão da direita
-                botton.setAttribute("id","botton-right")
-                botton.appendChild(span)
-                    span.textContent = ("chevron_right")
+
+                boxFixo.appendChild(bottonRight)     // botão da direita
+                    bottonRight.setAttribute("id","botton-right")
+                    bottonRight.appendChild(spanRight)
+                        spanRight.textContent = ("chevron_right")
     }
 }
 
 listAll()
+
+
 
