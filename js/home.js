@@ -4,12 +4,12 @@ import Tmdb from "./api-tmdb.js";
 
 // header
 var fundo = document.querySelector(".header")
-var title = document.getElementById("infor--title")
+var title = document.getElementById("info--title")
 var ponto = document.getElementById("info--ponto")
 var ano = document.getElementById("info--ano")
-var season = document.getElementById("info--season")
+var tempo = document.getElementById("info--time")
 var sinopse = document.getElementById("info--sinopse")
-var genero = document.getElementById("info--genero")
+var view = document.getElementById("info--view")
 
 // Box-principal 
 var main = document.getElementById("main")
@@ -21,7 +21,7 @@ const listAll = async () => {
     //  FILME NA HEADER
 
     // pegando um filme aleatório
-    const filmes = lista[0].movie.results
+    const filmes = lista[1].movie.results
     const valor = Math.floor(Math.random() * (filmes.length - 1))
     const filmeEscolhido = filmes[valor]
 
@@ -30,6 +30,32 @@ const listAll = async () => {
     // motando a header
 
     fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
+
+    title.textContent = `${filmeEscolhido.title}` 
+    ponto.textContent = `${filmeEscolhido.vote_average.toFixed(1)} pontos`
+
+    // ano
+    const year = new Date(`${filmeEscolhido.release_date}`)
+    ano.textContent = `${year.getFullYear()}`
+
+    // duração
+    tempo.textContent = `${filmeEscolhido.original_language}`
+
+    // sinopse
+    const max = 300;
+    const conteudo = filmeEscolhido.overview
+    
+    if (conteudo.length > max) 
+    {
+        sinopse.textContent = conteudo.slice(0, max) + " ..."
+    } 
+    else 
+    {
+        sinopse.textContent = conteudo
+    }
+    
+    view.textContent = `${filmeEscolhido.popularity} view`
+    
 
     // FILMES NAS LISTAS 
 
