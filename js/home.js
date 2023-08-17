@@ -16,9 +16,9 @@ var main = document.getElementById("main")
 
 // trazendo os dados dos filmes
 const listAll = async () => {
-    let movie = await Tmdb.getHomeList()
+    let lista = await Tmdb.getHomeList()
     
-    for (let i = 0; i < movie.length; i++)
+    for (let i = 0; i < lista.length; i++)
     {
         // CRIANDOO AS TAGS HTML
         var section = document.createElement("section")
@@ -48,22 +48,14 @@ const listAll = async () => {
         var ul = document.createElement("ul")
         ul.classList.add("box-rolagem-lista")
 
-        // lista
-        var li = document.createElement("li")
-        li.classList.add("lista")
-
-        // ancora
-        var a = document.createElement("a")
-
-        // imagem cartaz
-        var img = document.createElement("img")
-        img.classList.add("foto-cartaz")
-
         // Motando a estrutura da lista
 
         main.appendChild(section)
             section.appendChild(boxTitle)
                 boxTitle.appendChild(h2)
+                    h2.textContent = (`${lista[i].title}`)
+
+                    console.log(lista[i].movie.results)
 
             section.appendChild(boxFixo)
                 boxFixo.appendChild(botton)     // botão da esqueda
@@ -72,13 +64,26 @@ const listAll = async () => {
                         span.textContent = ("chevron_left")
                 boxFixo.appendChild(ul)
 
-                    for (let x = 0; x < movie.movie.length; x++)  // add as listas com filmes
+                    for (let x = 0; x < lista[i].movie.results.length; x++)  // add as listas com filmes
                     {
+                         // lista
+                        var li = document.createElement("li")
+                        li.classList.add("lista")
+
+                        // ancora
+                        var a = document.createElement("a")
+
+                        // imagem cartaz
+                        var img = document.createElement("img")
+                        img.classList.add("foto-cartaz")
+
+                        // motando a lista
                         ul.appendChild(li)
                             li.appendChild(a)
-                                a.setAttribute("href",`home-filme.html?id=${movie.movie[i].id}`) //PENDÊNCIA id filme
+                                a.setAttribute("href",`home-filme.html?id=${lista[i].movie.results[x].id}`) 
+
                                 a.appendChild(img)
-                                    img.setAttribute("src",`https://image.tmdb.org/t/p/w300${movie.movie[i].img}`) //PENDÊNCIA id filme
+                                    img.setAttribute("src",`https://image.tmdb.org/t/p/w300${lista[i].movie.results[x].poster_path}`) 
                     }
                
                 boxFixo.appendChild(botton)     // botão da direita
