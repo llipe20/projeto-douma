@@ -1,4 +1,7 @@
 import Tmdb from "./api-tmdb.js";
+import eventos from "./eventos.js";
+
+console.log(eventos)
 
 // pegando os elementos para add os dados
 
@@ -17,7 +20,7 @@ var main = document.getElementById("main")
 // trazendo os dados dos filmes
 const listAll = async () => {
     let lista = await Tmdb.getHomeList()
-    
+
     //  FILME NA HEADER
 
     // pegando um filme aleatório
@@ -40,7 +43,7 @@ const listAll = async () => {
     const year = new Date(`${filmeEscolhido.release_date}`)
     ano.textContent = `${year.getFullYear()}`
 
-    // duração
+    // idioma
     tempo.textContent = `${filmeEscolhido.original_language}`
 
     // sinopse
@@ -141,9 +144,21 @@ const listAll = async () => {
                     bottonRight.appendChild(spanRight)
                         spanRight.textContent = ("chevron_right")
     }
+    
+    const allSections = document.querySelectorAll(".box-lista-fixa");
+
+    allSections.forEach(section => {
+        const bottons = section.querySelectorAll(".botton-absoluto");
+        const lis = section.querySelectorAll('.lista');
+        let atual = 0;
+
+        console.log(section)
+        eventos.rolagem(bottons, lis, atual); // Chamando a função do módulo "eventos.js"
+    });
 }
 
 listAll()
+
 
 
 

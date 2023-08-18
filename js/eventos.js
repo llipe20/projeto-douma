@@ -1,40 +1,39 @@
+    
+    export default {
+        rolagem: (bottons, imgs, atual) => {
 
-var btnRolagem = document.querySelectorAll(".botton-absoluto")
-var filmeAtual = 0;
-var lista = document.getElementsByTagName("li");
-var max = lista.length;
+            const max = imgs.length;
 
-btnRolagem.forEach(btnRolagem => {
-    btnRolagem.addEventListener("click", () => {
-
-        // descobrir qual botão foi clicado
-        const isRight = btnRolagem.classList.contains('right');
-
-        if (isRight)
-        {
-            filmeAtual += 1;
+            bottons.forEach(botton => {
+                botton.addEventListener("click", () => {
+            
+                    // Descobrir qual botão foi clicado
+                    const isRight = botton.classList.contains('right');
+            
+                    if (isRight) {
+                        atual += 1;
+                    } else {
+                        atual -= 1;
+                    }
+            
+                    if (atual >= max) {
+                        atual = 0;
+                    }
+                    
+                    if (atual < 0) {
+                        atual = max - 1;
+                    }
+            
+                    imgs[atual].scrollIntoView({
+                        inline: "center",
+                        behavior: "smooth"
+                    });
+            
+                    console.log(atual);
+                });
+            });
         }
-        else
-        {
-            filmeAtual -= 1;
-        }
+    }
 
-        if (filmeAtual >= max)
-        {
-            filmeAtual = 0;
-        }
-        
-        if (filmeAtual < 0)
-        {
-            filmeAtual = max - 1;
-        }
 
-        lista[filmeAtual].scrollIntoView({
-            inline : "center",
-            behavior : "smooth"
-        })
-
-        console.log(filmeAtual)
-    })
-})
 

@@ -34,15 +34,15 @@ export default {
             },
 
             {
-                slug : 'ficcao',
-                title : 'Ficção científica',
-                movie : await getMovie(`/discover/movie?with_genres=878&language=pt-BR&api_key=${chave}`)
+                slug : 'documentario',
+                title : 'Documentário',
+                movie : await getMovie(`/discover/movie?with_genres=99&language=pt-BR&api_key=${chave}`)
             },
 
             {
-                slug : 'aventura',
-                title : 'Aventura',
-                movie : await getMovie(`/discover/movie?with_genres=12&language=pt-BR&api_key=${chave}`)
+                slug : 'comedia',
+                title : 'Comédia',
+                movie : await getMovie(`/discover/movie?with_genres=35&language=pt-BR&api_key=${chave}`)
             },
 
             {

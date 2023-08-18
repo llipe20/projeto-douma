@@ -9,13 +9,14 @@
 }
 
 .main, .section-movie {
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 12px;
     height: auto;
-    width: 100vw;
+    width: 97vw;
     padding: 0px 10px 10px 10px;
 }
 
@@ -33,7 +34,7 @@ h2.title-section, .paragrafo {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 95vw;
+    width: 90vw;
 }
 
 ul.box-rolagem-lista {
