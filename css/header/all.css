@@ -45,9 +45,15 @@ body, html {
     height: 80px;
     width: 100vw;
     position: fixed;
+    transition: background-color 0.3s ease-in-out;
     z-index: 1;
     top: 0;
     left: 0;
+}
+
+.scrolled {
+    background-color: black;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .nav--title-logo, h1 {

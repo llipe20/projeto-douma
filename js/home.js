@@ -1,7 +1,5 @@
 import Tmdb from "./api-tmdb.js";
-import eventos from "./eventos.js";
-
-console.log(eventos)
+import {rolagem, showPlay} from "./eventos.js"; // funções de eventos
 
 // pegando os elementos para add os dados
 
@@ -30,9 +28,8 @@ const listAll = async () => {
 
     // MONTANDO A HEADER
 
-    // id do filme
-    const input = document.getElementById("id-filme")
-    input.value = filmeEscolhido.id
+    // Aplicação do botton play
+    showPlay(filmeEscolhido.id)
 
     fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
 
@@ -152,12 +149,12 @@ const listAll = async () => {
         const lis = section.querySelectorAll('.lista');
         let atual = 0;
 
-        console.log(section)
-        eventos.rolagem(bottons, lis, atual); // Chamando a função do módulo "eventos.js"
+        rolagem(bottons, lis, atual); // aplicação da rolagem
     });
 }
 
 listAll()
+
 
 
 
