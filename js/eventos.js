@@ -48,6 +48,8 @@ input.addEventListener("keyup", async (event) => {
 
     if (event.key === "Enter") 
     {
+        window.location.href = './search.html'
+
         const movies = await getFilme()
         const pesquisa = input.value.toLowerCase()
 
@@ -57,7 +59,7 @@ input.addEventListener("keyup", async (event) => {
 
             if (bancoFilme.includes(pesquisa))
             {
-                // COD PENDENTE 
+                console.log(bancoFilme) 
             }
             else
             {
@@ -117,15 +119,12 @@ const scrollNav = () => {
 
             close.style.color = 'white'
             input.style.color = 'white'
-
-            boxSearch.style.transition = 'background-color 0.5s ease-in-out'
-            lupa.style.transition = 'background-color 0.5s ease-in-out'
         } 
         else 
         {
             nav.classList.remove("scrolled")
 
-            lupa.style.backgroundColor = 'rgb(0, 0, 157)'
+            lupa.style.backgroundColor =  'rgb(0, 0, 157)'
             boxSearch.style.backgroundColor = 'white'
 
             close.style.color = 'black'

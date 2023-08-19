@@ -5,8 +5,8 @@
 }
 
 .header {
-    background-size: contain;
-    background-position: left center;
+    background-size: cover;
+    background-position: right center;
 }
 
 .background-vertical {

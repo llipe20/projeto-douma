@@ -3,29 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LINK DE INCON´S -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!-- LINK CSS HEADER -->
+    <link rel="stylesheet" href="css/header/all.css" media="all">
+    <link rel="stylesheet" href="css/header/mobile.css" media="screen and (max-width: 800px)">
+    <link rel="stylesheet" href="css/header/desktop.css" media="screen and (min-width: 801px)">
+
+    <!-- LINK CSS MAIN -->
+    <link rel="stylesheet" href="css/main/all.css" media="all">
+    <link rel="stylesheet" href="css/main/mobile.css" media="screen and (max-width: 800px)">
+    <link rel="stylesheet" href="css/main/desktop.css" media="screen and (min-width: 801px)">
+
     <title>Home</title>
+
 </head>
 <body>
-    <h2 id="title">
+     <header class="header">
+    
+        <nav class="nav">
 
-    </h2>
+            <span class="material-symbols-outlined">
+                keyboard_backspace
+            </span>
 
-    <script>
-        // EVENTO pegando o id do filme pela URL
-        document.addEventListener('DOMContentLoaded', () => {
-            const getId = async () => {
-                // Obter a URL atual
-                const urlParams = new URLSearchParams(window.location.search);
+            <h2 id="nav--title-logo" class="nav--title-logo">
+                ELIDA
+            </h2>
+        </nav>
 
-                // Obter o valor do parâmetro 'id'
-                const id = urlParams.get('id');
+        <div class="box-cartaz" id="box-cartaz">
+            <img src="" alt="cartaz do filme" id="cartaz" class="cartaz">
 
-                const h2 = document.getElementById("title");
-                h2.textContent = id;
-            };
+            <h1 class="info" id="view">
+                2184949 vizualizações
+            </h1>
+        </div>
+     </header>
 
-            getId();
-        });
-    </script>
+     <main class="main">
+
+        <h1 id="title-filme">Flash</h1>
+
+        <div class="box-movie--info"> <!-- CAIXA DEITADA -->
+
+            <h3 id="ponto" class="info">8.7 pontos</h3>
+            <h3 id="ano" class="info">2023</h3>
+            <h3 id="language" class="info">en</h3>
+
+        </div> 
+
+        <div class="box-sinopse">
+            <h3 class="info">Sinopse</h3>
+
+            <p id="info--sinopse" class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eius alias repellendus voluptates perferendis inventore, optio cum vel laboriosam pariatur soluta reiciendis, fugit iste tempore quod laborum reprehenderit ratione a!</p>   <!-- SINOPSE -->
+        </div>
+
+        <div class="box-trailer">
+            <h3 class="info">Trailer</h3>
+
+        </div>
+     </main>
+
+       <!-- RODAPÉ -->
+    <footer class="footer">
+
+        <a href="https://www.instagram.com/https_llpe/" class="paragrafo" target="_blank">Densenvolvido por llpe</a>
+
+        <a href="" class="paragrafo" target="_blank">Todos os direitos de imagem e conteúdo pertencem a tmdb</a>
+
+    </footer>
 </body>
 </html>

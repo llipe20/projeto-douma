@@ -34,7 +34,7 @@ const listAll = async () => {
     trailer('IZw2slPIoGs')
 
     fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
-   
+    
     title.textContent = `${filmeEscolhido.title}` 
     ponto.textContent = `${filmeEscolhido.vote_average.toFixed(1)} pontos`
 
