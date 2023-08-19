@@ -59,7 +59,6 @@ const listAll = async () => {
     
     view.textContent = `${filmeEscolhido.popularity} view`
 
-
     // FILMES NAS LISTAS 
 
     for (let i = 0; i < lista.length; i++)
@@ -82,10 +81,12 @@ const listAll = async () => {
 
         // botões da esquerda
         var bottonLeft = document.createElement("button")
+        bottonLeft.setAttribute("id",`left-${i}`)
         bottonLeft.classList.add("botton-absoluto","left")
 
         // botões da direita
         var bottonRight = document.createElement("button")
+        bottonRight.setAttribute("id",`right-${i}`)
         bottonRight.classList.add("botton-absoluto","right")
 
         // emoj da esquerda
@@ -98,6 +99,7 @@ const listAll = async () => {
 
         // box lista -relativo
         var ul = document.createElement("ul")
+        ul.setAttribute("id",`ul-${i}`)
         ul.classList.add("box-rolagem-lista")
 
         // Motando a estrutura da lista
@@ -141,17 +143,8 @@ const listAll = async () => {
                     bottonRight.setAttribute("id","botton-right")
                     bottonRight.appendChild(spanRight)
                         spanRight.textContent = ("chevron_right")
-    }
-    
-    const allSections = document.querySelectorAll(".box-lista-fixa");
 
-    allSections.forEach(section => {
-        const bottons = section.querySelectorAll(".botton-absoluto");
-        const lis = section.querySelectorAll('.lista');
-        let atual = 0;
-
-        rolagem(bottons, lis, atual); // aplicação da rolagem
-    });
+    }  
 }
 
 listAll()
