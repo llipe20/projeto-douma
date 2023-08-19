@@ -1,4 +1,6 @@
 
+import apiTmdb from "./api-tmdb.js";
+
 export { showPlay, rolagem, imgResposive }
 
 // EVENTO de botões de rolagem horizontal
@@ -93,6 +95,63 @@ const imgResposive = (fundo,poster,backdrop) => {
 }
 
 // EVENTO do botão de pesquisa
+var lupa = document.getElementById("botton-open")
+var input = document.getElementById("input-search")
+var close = document.getElementById("botton-close")
+
+// abrir barra
+lupa.addEventListener("click", () => {
+
+    input.classList.remove("invisible")
+    input.focus()
+    close.classList.remove("invisible")
+})
+
+// fechar barra
+close.addEventListener("click", () => {
+
+    input.value = ''
+    input.classList.add("invisible")
+    close.classList.add("invisible")
+})
+
+// pegar todos os filmes da API
+const getFilme = async () => {
+    const lista = await apiTmdb.getHomeList();
+
+    let allFilmes = []; // Array para armazenar todos os filmes
+
+    for (const posicao in lista) {
+
+        const filmesDaPosicao = lista[posicao].movie.results;
+        allFilmes = allFilmes.concat(filmesDaPosicao); // Adiciona os filmes ao array
+    }
+
+    return allFilmes;
+}
 
 
+// EVENTO para filtar a pesquisa e retornar respostas
+input.addEventListener("keyup", async (event) => {
+
+    if (event.key === "Enter") 
+    {
+        const movies = await getFilme()
+        const pesquisa = input.value.toLowerCase()
+
+        for (let posicao in movies)
+        {
+            let bancoFilme = movies[posicao].title.toLowerCase()
+
+            if (bancoFilme.includes(pesquisa))
+            {
+                // COD PENDENTE 
+            }
+            else
+            {
+                continue
+            }
+        }
+    } 
+})
 
