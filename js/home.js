@@ -1,5 +1,5 @@
 import Tmdb from "./api-tmdb.js";
-import {rolagem, showPlay, imgResposive} from "./eventos.js"; // funções de eventos
+import {rolagem, showPlay, trailer} from "./eventos.js"; // funções de eventos
 
 // pegando os elementos para add os dados
 
@@ -31,6 +31,7 @@ const listAll = async () => {
 
     // Aplicação do botton play
     showPlay(filmeEscolhido.id)
+    trailer('IZw2slPIoGs')
 
     fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
    

@@ -1,12 +1,13 @@
 
 import apiTmdb from "./api-tmdb.js";
 
-export { showPlay, rolagem, imgResposive }
+export { showPlay, rolagem, trailer }
 
 // EVENTO do botão de pesquisa
 var lupa = document.getElementById("botton-open")
 var input = document.getElementById("input-search")
 var close = document.getElementById("botton-close")
+var boxSearch = document.getElementById("box-search")
 
 // abrir barra
 lupa.addEventListener("click", () => {
@@ -14,6 +15,7 @@ lupa.addEventListener("click", () => {
     input.classList.remove("invisible")
     input.focus()
     close.classList.remove("invisible")
+    lupa.classList.add("invisible")
 })
 
 // fechar barra
@@ -22,6 +24,7 @@ close.addEventListener("click", () => {
     input.value = ''
     input.classList.add("invisible")
     close.classList.add("invisible")
+    lupa.classList.remove("invisible")
 })
 
 // pegar todos os filmes da API
@@ -107,16 +110,26 @@ const scrollNav = () => {
         if (window.scrollY > 5) 
         {
             nav.classList.add("scrolled")
+
             lupa.style.backgroundColor = 'transparent'
-            lupa.style.transition = 'background-color 0.5s ease-in-out'
+            boxSearch.style.backgroundColor = 'transparent'
             close.style.backgroundColor = 'transparent'
-            close.style.transition = 'background-color 0.5s ease-in-out'
+
+            close.style.color = 'white'
+            input.style.color = 'white'
+
+            boxSearch.style.transition = 'background-color 0.5s ease-in-out'
+            lupa.style.transition = 'background-color 0.5s ease-in-out'
         } 
         else 
         {
             nav.classList.remove("scrolled")
-            lupa.style.backgroundColor = ' rgb(0, 0, 157)'
-            close.style.backgroundColor = ' rgb(0, 0, 157)'
+
+            lupa.style.backgroundColor = 'rgb(0, 0, 157)'
+            boxSearch.style.backgroundColor = 'white'
+
+            close.style.color = 'black'
+            input.style.color = 'black'
         }
     });
 }
@@ -140,12 +153,13 @@ const showPlay = (id) => {
 
 const trailer = (id) => {
 
-    const play = document.getElementById("botton-play")
+    const play = document.getElementById("botton--play")
 
-    play.addEventListener("click", async () => {
+    play.addEventListener("click", () => {
 
-        const cod = await id
+    const url = `https://www.youtube.com/watch?v=${id}`
+    window.open(url, "_blank")
 
         // CODIGO PENDENTE
     })
-}   
+}  

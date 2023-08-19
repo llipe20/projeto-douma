@@ -138,12 +138,13 @@ h1 {
 /* BARRA DE PESQUISA */
 
 .box-search {
-    background-color: transparent;
+    background-color: white;
+    color: black;
     display: flex;
     align-items: center;
     gap: 10px;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 25px;
     width: auto;
 }
 
@@ -156,8 +157,6 @@ h1 {
     border: none;
     outline: none;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
 }
 
 .input-search {
@@ -165,18 +164,20 @@ h1 {
     width: 40vw;
     max-width: 500px;
     padding: 0px 10px;
+    margin-left: 10px;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.1em;
     background-color: transparent;
-    color: white;
+    color: black;
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.482);
     outline: none;
 }
 
 #botton-close {
-    background-color:  rgba(0, 0, 157);
+    background-color: transparent;
+    color: black;
 }
 
 .invisible {
