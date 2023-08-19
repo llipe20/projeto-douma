@@ -1,5 +1,5 @@
 import Tmdb from "./api-tmdb.js";
-import {rolagem, showPlay} from "./eventos.js"; // funções de eventos
+import {rolagem, showPlay, imgResposive} from "./eventos.js"; // funções de eventos
 
 // pegando os elementos para add os dados
 
@@ -21,8 +21,9 @@ const listAll = async () => {
 
     //  FILME NA HEADER
 
-    // pegando um filme aleatório
+    // pegando um filme aleatório 
     const filmes = lista[1].movie.results
+
     const valor = Math.floor(Math.random() * (filmes.length - 1))
     const filmeEscolhido = filmes[valor]
 
@@ -32,7 +33,7 @@ const listAll = async () => {
     showPlay(filmeEscolhido.id)
 
     fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
-
+   
     title.textContent = `${filmeEscolhido.title}` 
     ponto.textContent = `${filmeEscolhido.vote_average.toFixed(1)} pontos`
 

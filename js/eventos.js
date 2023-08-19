@@ -1,5 +1,5 @@
 
-export { showPlay, rolagem }
+export { showPlay, rolagem, imgResposive }
 
 // EVENTO de botões de rolagem horizontal
 const rolagem = (bottons, imgs, atual) => {
@@ -37,6 +37,7 @@ const rolagem = (bottons, imgs, atual) => {
 
 // EVENTO de background na nav fixa
 const scrollNav = () => {
+
     const nav = document.querySelector(".nav");
 
     window.addEventListener("scroll", () => {
@@ -66,6 +67,30 @@ const showPlay = (id) => {
     })
 }
 
+
+const imgResposive = (fundo,poster,backdrop) => {
+
+    window.addEventListener('resize', () => {
+
+        let mediaQuery = window.innerWidth
+
+        if (mediaQuery < 500)
+        {
+            fundo.style.background = `url(https://image.tmdb.org/t/p/w500${poster})`
+            fundo.style.backgroundPosition = 'center center'
+        }
+        else if (mediaQuery > 500 && mediaQuery < 1920)
+        {
+            fundo.style.background = `url(https://image.tmdb.org/t/p/original${backdrop})`
+
+            fundo.style.backgroundPosition = 'center center'
+        }
+        else
+        {
+            fundo.style.background = `url(https://image.tmdb.org/t/p/original${backdrop})`
+        }
+    })
+}
 
 // EVENTO do botão de pesquisa
 

@@ -1,6 +1,7 @@
 
 .header {
-    background: url('https://picsum.photos/2560/1440'), center center, no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 .header, .background-horizontal {

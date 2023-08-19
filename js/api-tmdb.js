@@ -40,12 +40,6 @@ export default {
             },
 
             {
-                slug : 'comedia',
-                title : 'Comédia',
-                movie : await getMovie(`/discover/movie?with_genres=35&language=pt-BR&api_key=${chave}`)
-            },
-
-            {
                 slug : 'romance',
                 title : 'Romance',
                 movie : await getMovie(`/discover/movie?with_genres=10749&language=pt-BR&api_key=${chave}`)

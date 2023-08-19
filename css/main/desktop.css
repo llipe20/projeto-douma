@@ -57,8 +57,3 @@ a>img:hover {
 .paragrafo {
     font-size: 1.2em;
 }
-
-.paragrafo:hover {
-    color: rgb(180, 175, 175);
-    transform: scale(0.97);
-}
