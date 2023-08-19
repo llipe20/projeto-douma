@@ -70,8 +70,8 @@ h1 {
     width: 50px;
 }
 
-.botton-search:hover, #botton-close:hover {
-    background-color:  rgba(0, 0, 130);
+.botton-search:hover {
+    background-color: rgba(0, 0, 157, 0.659);
 }
 
 
