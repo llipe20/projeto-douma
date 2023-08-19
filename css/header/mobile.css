@@ -15,10 +15,11 @@
 
 .nav {
     max-width: 800px;
+    height: 65px;
 }
 
 .nav--title-logo {
-    font-size: 1.6em;
+    font-size: 1.4em;
 }
 
 .box-movie {
@@ -60,6 +61,10 @@ h1 {
 }
 
 /* BARRA DE PESQUISA */
+
+.box-search {
+    height: 45px;
+}
 
 .botton-search {
     font-size: 1em;

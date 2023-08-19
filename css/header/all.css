@@ -146,10 +146,9 @@ h1 {
     display: flex;
     align-items: center;
     gap: 10px;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 20px;
     width: auto;
-    height: 50px;
 }
 
 .botton-search {
@@ -181,7 +180,7 @@ h1 {
 }
 
 #botton-close {
-    background-color: transparent;
+    background-color:  rgba(0, 0, 157);
 }
 
 .invisible {

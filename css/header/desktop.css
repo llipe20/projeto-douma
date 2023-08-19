@@ -60,8 +60,19 @@ h1 {
 
 /* BARRA DE PESQUISA */
 
+.box-search {
+    height: 50px;
+}
+
 .botton-search {
     font-size: 1.2em;
     height: 50px;
     width: 50px;
 }
+
+.botton-search:hover, #botton-close:hover {
+    background-color:  rgba(0, 0, 130);
+}
+
+
+
