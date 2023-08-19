@@ -10,19 +10,22 @@ h2.title-section {
 
 .botton-absoluto {
     position: absolute;
+    top: 0;
+    bottom: 0;
     text-align: center;
     background-color: transparent;
     color: white;
     border: none;
     outline: none;
     font-size: 2em;
-    width: 10vw;
-    z-index: 0;
+    width: 50px;
+    transform: scale(0.85);
+    z-index: 1;
 }
 
 .botton-absoluto:hover {
-    font-size: 2.5em;
-    color: rgb(180, 175, 175);
+    background-color: rgba(0, 0, 0, 0.584);
+    transform: scale(1);
 }
 
 .material-symbols-outlined {
@@ -31,12 +34,10 @@ h2.title-section {
 
 #botton-left {
     left: -3%;
-    top: 50%;
 }
 
 #botton-right {
-    left: 93%;
-    top: 50%;
+    left: 98%;
 }
 
 ul > li {

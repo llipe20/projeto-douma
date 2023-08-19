@@ -46,13 +46,14 @@ body, html {
     width: 100vw;
     position: fixed;
     transition: background-color 0.5s ease-in-out;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
 }
 
 .scrolled {
     background-color: black;
+    z-index: 2;
     transition: background-color 0.5s ease-in-out;
 }
 
@@ -137,4 +138,55 @@ h1 {
 #h4--black {
     color: black;
 }
+
+/* BARRA DE PESQUISA */
+
+.box-search {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    border-radius: 20px;
+    width: auto;
+    height: 50px;
+}
+
+.botton-search {
+    background-color: rgb(0, 0, 157);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.input-search {
+    height: 35px;
+    width: 40vw;
+    max-width: 500px;
+    padding: 0px 10px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.482);
+    outline: none;
+}
+
+#botton-close {
+    background-color: transparent;
+}
+
+.invisible {
+    display: none;
+}
+
+
 
