@@ -80,18 +80,21 @@ const rolagem = (bottons, imgs, atual) => {
             // Descobrir qual botão foi clicado
             const isRight = botton.classList.contains('right');
     
-            if (isRight) {
-                atual += 1;
-            } else {
-                atual -= 1;
+            if (isRight) 
+            {
+                atual += 4;
+            } 
+            else 
+            {
+                atual -= 4;
             }
     
             if (atual >= max) {
-                atual = 0;
+                atual = max;
             }
             
             if (atual < 0) {
-                atual = max - 1;
+                atual = 0;
             }
     
             imgs[atual].scrollIntoView({

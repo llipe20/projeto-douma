@@ -66,6 +66,7 @@ const listAll = async () => {
     {
         // CRIANDOO AS TAGS HTML
         var section = document.createElement("section")
+        section.setAttribute("id",`section-${i}`)
         section.classList.add("section-movie")
 
         // div do title da sessão
@@ -82,12 +83,12 @@ const listAll = async () => {
 
         // botões da esquerda
         var bottonLeft = document.createElement("button")
-        bottonLeft.setAttribute("id",`left-${i}`)
+        bottonLeft.setAttribute("id","botton-left")
         bottonLeft.classList.add("botton-absoluto","left")
 
         // botões da direita
         var bottonRight = document.createElement("button")
-        bottonRight.setAttribute("id",`right-${i}`)
+        bottonRight.setAttribute("id","botton-right")
         bottonRight.classList.add("botton-absoluto","right")
 
         // emoj da esquerda
@@ -112,7 +113,6 @@ const listAll = async () => {
 
             section.appendChild(boxFixo)
                 boxFixo.appendChild(bottonLeft)     // botão da esqueda
-                    bottonLeft.setAttribute("id","botton-left")
                     bottonLeft.appendChild(spanLeft)
                         spanLeft.textContent = ("chevron_left")
 
@@ -141,11 +141,9 @@ const listAll = async () => {
                     }
 
                 boxFixo.appendChild(bottonRight)     // botão da direita
-                    bottonRight.setAttribute("id","botton-right")
                     bottonRight.appendChild(spanRight)
                         spanRight.textContent = ("chevron_right")
-
-    }  
+    } 
 }
 
 listAll()

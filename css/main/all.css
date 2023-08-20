@@ -49,6 +49,38 @@ li {
     display: none;
 }
 
+.botton-absoluto {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 2em;
+    width: 40px;
+    transform: scale(0.85);
+    z-index: 1;
+}
+
+.botton-absoluto:hover {
+    background-color: rgba(0, 0, 0, 0.584);
+    transform: scale(1);
+}
+
+.material-symbols-outlined {
+    font-size: 1.5em;
+}
+
+#botton-left {
+    left: -2%;
+}
+
+#botton-right {
+    left: 96%;
+}
+
 /* FOOTER */
 
 .footer {
