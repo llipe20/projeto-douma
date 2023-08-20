@@ -29,12 +29,21 @@
         </nav>
 
         <div class="box-cartaz" id="box-cartaz">
-            <img src="https://picsum.photos/270/360" alt="cartaz do filme" id="cartaz" class="cartaz">
+            <div class="img-teste">
+
+            </div>
 
             <h1 class="info" id="view">
                 2184949 vizualizações
             </h1>
         </div>
+
+        <div class="box-sinopse invisible">
+            <h3 id="sinopse-name" class="info">Sinopse</h3>
+
+            <p id="info--sinopse" class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eius alias repellendus voluptates perferendis inventore, optio cum vel laboriosam pariatur soluta reiciendis, fugit iste tempore quod laborum reprehenderit ratione a! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusantium quaerat pariatur ut placeat, dolor sint soluta consequatur quisquam magni quod, ullam ratione tempore dolore non fuga commodi itaque aperiam!</p>   <!-- SINOPSE -->
+        </div>
+
      </header>
 
      <main class="main">
@@ -49,7 +58,7 @@
 
         </div> 
 
-        <div class="box-sinopse">
+        <div class="box-sinopse visible">
             <h3 class="info">Sinopse</h3>
 
             <p id="info--sinopse" class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eius alias repellendus voluptates perferendis inventore, optio cum vel laboriosam pariatur soluta reiciendis, fugit iste tempore quod laborum reprehenderit ratione a! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusantium quaerat pariatur ut placeat, dolor sint soluta consequatur quisquam magni quod, ullam ratione tempore dolore non fuga commodi itaque aperiam!</p>   <!-- SINOPSE -->
@@ -58,7 +67,9 @@
         <div class="box-trailer">
             <h3 id="title-trailer" class="info">Trailer</h3>
 
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/EG057IQHkBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="invisible" width="560" height="315" src="https://www.youtube.com/embed/EG057IQHkBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            <iframe class="visible" width="400" height="225" src="https://www.youtube.com/embed/EG057IQHkBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
      </main>
 

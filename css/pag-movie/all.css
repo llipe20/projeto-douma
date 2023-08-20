@@ -14,11 +14,14 @@ body, html {
     overflow-x: hidden;
 }
 
+.body::-webkit-scrollbar {
+    display: none;
+}
+
 .header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100vw;
     height: 80vh;
 }
@@ -30,7 +33,6 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 25px;
     height: 70px;
     width: 100vw;
     position: fixed;
@@ -48,7 +50,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.463);
-    color: rgb(0, 0, 157);
+    color: white;
 }
 
 .material-symbols-outlined {
@@ -64,6 +66,12 @@ body, html {
     align-items: center;
     justify-content: flex-end;
     gap: 10px;
+}
+
+.img-teste {
+    background-color: blue;
+    height: 400px;
+    width: 300px;
 }
 
 .info {
@@ -109,8 +117,6 @@ body, html {
 #title-filme {
     font-size: 2em;
     text-align: start;
-    width: 95vw;
-    padding: 5px;
 }
 
 .box-movie--info {
@@ -119,8 +125,6 @@ body, html {
     justify-content: flex-start;
     gap: 13px;
     height: auto;
-    width: 95vw;
-    padding-left: 5px;
     color: rgba(255, 255, 255, 0.612);
 }
 
@@ -138,11 +142,6 @@ body, html {
     align-items: flex-start;
     justify-content: center;
     margin: 5px 0px;
-    gap: 10px;
-    width: 96vw;
-    height: auto;
-    padding-left: 5px;
-    margin-top: 20px;
 }
 
 #info--sinopse {
@@ -153,10 +152,12 @@ body, html {
 
 .box-trailer {
     align-items: center;
+    width: 96vw;
+    height: auto;
+    padding-left: 5px;
 }
 
 #title-trailer {
-    width: 95vw;
     text-align: start;
 }
 
@@ -184,10 +185,12 @@ body, html {
 
 /* CSS SEARCH.HTML */ 
 
+#header-search {
+    min-height: 80px;
+}
+
 #nav-search {
-    justify-content: space-evenly;
     height: 75px;
-    gap: 10px;
 }
 
 .box-search {
@@ -231,21 +234,13 @@ body, html {
 /* main */
 
 .main-search {
-    background-color: aliceblue;
-    display: flex;
-    height: auto;
-    width: 90vw;
-    padding: 10px;
-    margin: 0;
-}
-
-.lista {
-    background-color: aqua;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    height: 150px;
-    width: 150px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 15px 15px;
+    height: auto;
+    width: 90vw;
+    margin: auto;
 }

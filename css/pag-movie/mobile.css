@@ -1,0 +1,52 @@
+
+.nav {
+    padding: 0px 25px;
+}
+
+.box-sinopse {
+    width: 96vw;
+    height: auto;
+    padding-left: 5px;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: inline-block;
+}
+
+/* MAIN */
+
+#title-filme {
+    width: 95vw;
+    padding: 5px;
+}
+
+.box-movie--info {
+    padding-left: 5px;
+    width: 95vw;
+}
+
+.box-trailer {
+    margin-top: 20px;
+    gap: 10px;
+}
+
+#title-trailer {
+    width: 95vw;
+}
+
+#nav-search {
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.lista {
+    background-color: red;
+    height: 175px;
+    width: 130px;
+}
