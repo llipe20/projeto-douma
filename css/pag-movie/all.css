@@ -8,7 +8,7 @@
 
 body, html {
     background-color: black;
-    color: blue;
+    color:  white;
     min-height: 100vh;
     width: auto;
     overflow-x: hidden;
@@ -52,7 +52,7 @@ body, html {
 }
 
 .material-symbols-outlined {
-    font-size: 2em;
+    font-size: 1.6em;
 }
 
 /* CARTAZ */ 
@@ -179,4 +179,73 @@ body, html {
     text-decoration: none;
     text-align: center;
     font-weight: normal;
+}
+
+
+/* CSS SEARCH.HTML */ 
+
+#nav-search {
+    justify-content: space-evenly;
+    height: 75px;
+    gap: 10px;
+}
+
+.box-search {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    border-radius: 25px;
+    width: auto;
+}
+
+.botton-search {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+}
+
+.input-search {
+    height: 40px;
+    width: 70vw;
+    max-width: 500px;
+    padding: 0px 5px;
+    margin-left: 10px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.482);
+    outline: none;
+}
+
+/* main */
+
+.main-search {
+    background-color: aliceblue;
+    display: flex;
+    height: auto;
+    width: 90vw;
+    padding: 10px;
+    margin: 0;
+}
+
+.lista {
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 150px;
+    width: 150px;
 }

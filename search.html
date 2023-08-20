@@ -7,20 +7,15 @@
     <!-- LINK DE INCON´S -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    <!-- LINK CSS HEADER -->
-    <link rel="stylesheet" href="css/header/all.css" media="all">
-    <link rel="stylesheet" href="css/header/mobile.css" media="screen and (max-width: 800px)">
-    <link rel="stylesheet" href="css/header/desktop.css" media="screen and (min-width: 801px)">
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="css/pag-movie/all.css" media="all">
+    <link rel="stylesheet" href="css/pag-movie/mobile.css" media="screen and (max-width: 800px)">
+    <link rel="stylesheet" href="css/pag-movie/desktop.css" media="screen and (min-width: 801px)">
 
-    <!-- LINK CSS MAIN -->
-    <link rel="stylesheet" href="css/main/all.css" media="all">
-    <link rel="stylesheet" href="css/main/mobile.css" media="screen and (max-width: 800px)">
-    <link rel="stylesheet" href="css/main/desktop.css" media="screen and (min-width: 801px)">
-    
     <title>Search</title>
 </head>
 <body>
-    <nav class="nav">
+    <nav class="nav" id="nav-search">
 
         <span class="material-symbols-outlined">
             keyboard_backspace
@@ -28,13 +23,7 @@
 
         <div id="box-search" class="box-search">
 
-            <button id="botton-open" class="botton-search">
-                <span class="material-symbols-outlined">
-                    search
-                </span>
-            </button>
-
-            <input type="text" id="input-search" class="input-search invisible" placeholder="O que procura?">
+            <input type="text" id="input-search" class="input-search invisible" placeholder="O que você procura?" autofocus>
 
             <button id="botton-close" class="botton-search invisible">
 
@@ -46,7 +35,7 @@
         </div>
     </nav>
 
-    <main class="main">
+    <main class="main-search">
         <div class="lista">
             <img src="" alt="cartaz">
         </div>
