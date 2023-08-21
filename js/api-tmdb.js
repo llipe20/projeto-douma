@@ -57,5 +57,15 @@ export default {
                 movie : await getMovie(`/discover/movie?with_genres=27&language=pt-BR&api_key=${chave}`)
             }
         ]
+    }, 
+    
+    // pega dados do filme individualmente 
+    getMovieId : async (id) => {
+
+        const response = await fetch (`${base}/movie/${id}?api_key=${chave}&language=pt-BR`)
+
+        const dados = await response.json()
+    
+        return dados
     }
 }

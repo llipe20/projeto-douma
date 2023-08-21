@@ -68,8 +68,9 @@ body, html {
     gap: 10px;
 }
 
-.img-teste {
-    background-color: blue;
+.img-cartaz {
+    background-color: white;
+    margin-top: 20px;
     height: 400px;
     width: 300px;
 }
@@ -143,6 +144,7 @@ body, html {
     justify-content: center;
     margin: 5px 0px;
 }
+
 
 #info--sinopse {
     padding: 0px;

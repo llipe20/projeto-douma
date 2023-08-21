@@ -1,5 +1,5 @@
 import Tmdb from "./api-tmdb.js";
-import {rolagem, showPlay, trailer} from "./eventos.js"; // funções de eventos
+import {rolagem, showPlay, trailer} from "./eventos-home.js"; // funções de eventos
 
 // pegando os elementos para add os dados
 

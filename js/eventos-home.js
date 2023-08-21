@@ -10,22 +10,28 @@ var close = document.getElementById("botton-close")
 var boxSearch = document.getElementById("box-search")
 
 // abrir barra
-lupa.addEventListener("click", () => {
+
+if (lupa) 
+{
+    lupa.addEventListener("click", () => {
 
     input.classList.remove("invisible")
     input.focus()
     close.classList.remove("invisible")
     lupa.classList.add("invisible")
-})
 
-// fechar barra
-close.addEventListener("click", () => {
+    })
 
-    input.value = ''
-    input.classList.add("invisible")
-    close.classList.add("invisible")
-    lupa.classList.remove("invisible")
-})
+    // fechar barra
+    close.addEventListener("click", () => {
+
+        input.value = ''
+        input.classList.add("invisible")
+        close.classList.add("invisible")
+        lupa.classList.remove("invisible")
+    })
+}
+
 
 // pegar todos os filmes da API
 const getFilme = async () => {
@@ -44,7 +50,10 @@ const getFilme = async () => {
 
 
 // EVENTO para filtar a pesquisa e retornar respostas
-input.addEventListener("keyup", async (event) => {
+
+if(input)
+{
+    input.addEventListener("keyup", async (event) => {
 
     if (event.key === "Enter") 
     {
@@ -68,6 +77,8 @@ input.addEventListener("keyup", async (event) => {
         }
     } 
 })
+}
+
 
 // EVENTO de botões de rolagem horizontal
 const rolagem = (bottons, imgs, atual) => {
@@ -165,3 +176,13 @@ const trailer = (id) => {
         // CODIGO PENDENTE
     })
 }  
+
+// EVENTO botão de voltar
+var voltar = document.getElementById("voltar")
+
+if (voltar)
+{
+    voltar.addEventListener("click", () => {
+        window.location.href = "index.html"
+    })
+}
