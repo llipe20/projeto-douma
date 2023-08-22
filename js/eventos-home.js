@@ -57,24 +57,26 @@ if(input)
 
     if (event.key === "Enter") 
     {
-        window.location.href = './search.html'
-
         const movies = await getFilme()
         const pesquisa = input.value.toLowerCase()
+        
+        let ids = []
 
-        for (let posicao in movies)
+        for (let i = 0; i < movies.length; i++)
         {
-            let bancoFilme = movies[posicao].title.toLowerCase()
+            let a = await movies[i].title
+            let bancoFilme = a.toLowerCase()
 
             if (bancoFilme.includes(pesquisa))
             {
-                console.log(bancoFilme) 
+                ids.push(movies[i].id)
+                console.log(ids[i])
             }
             else
             {
-                continue
+                continue 
             }
-        }
+        } 
     } 
 })
 }
