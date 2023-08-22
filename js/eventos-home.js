@@ -59,24 +59,46 @@ if(input)
     {
         const movies = await getFilme()
         const pesquisa = input.value.toLowerCase()
-        
         let ids = []
 
         for (let i = 0; i < movies.length; i++)
         {
-            let a = await movies[i].title
-            let bancoFilme = a.toLowerCase()
+            let movie = await movies[i].title.toLowerCase()
 
-            if (bancoFilme.includes(pesquisa))
+            if (movie.includes(pesquisa))
             {
-                ids.push(movies[i].id)
-                console.log(ids[i])
+                if (window.location.pathname == 'search.html')
+                {
+                    let div = document.createElement("div") 
+                    let a = document.createElement("a")
+                    let img = document.createElement("img")
+
+                    div.classList.add("lista") 
+                    div.appendChild(a)
+
+                    a.setAttribute("src",`home-filme.html?id=${movie.id}`)
+                    a.appendChild(img)
+
+                    img.setAttribute("src",`https://image.tmdb.org/t/p/w300${movie.poster_path}`)
+                }
+                else
+                {
+                    ids.push(movie.id)
+                }
             }
             else
             {
                 continue 
             }
-        } 
+        }
+        
+        if (ids !== '') // Mandando id dos filmes pesquisado para o localStore
+        {
+            const idString = JSON.stringify(ids);
+            localStorage.setItem("ids", idString);
+
+            window.location.href = 'search.thml'
+        }
     } 
 })
 }

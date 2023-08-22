@@ -54,3 +54,8 @@
 #sinopse-mobile {
     margin-bottom: 5px;
 }
+
+#nav-search {
+    justify-content: space-between;
+    padding: 0 30px;
+}
