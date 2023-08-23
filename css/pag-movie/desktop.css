@@ -67,6 +67,15 @@
 }
 
 .lista {
-    height: 295px;
-    width: 220px;
+    height: 300PX;
+    width: auto;
+}
+
+a > img {
+    height: 300px;
+    transform: scale(0.9);
+}
+
+a>img:hover {
+    transform: scale(1);
 }

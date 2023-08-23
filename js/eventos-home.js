@@ -48,6 +48,34 @@ const getFilme = async () => {
 
 
 // EVENTO DE PESQUISA
+
+// Adiciona os elementos necessario para apresentar os dados da pesquisa
+const addElementos = (idFilme, posterPath) => {
+
+    if (idFilme == undefined || posterPath == undefined )
+    {
+        return     
+    }
+
+    const main = document.getElementById("main-search")
+    let div = document.createElement("div") 
+    let a = document.createElement("a")
+    let img = document.createElement("img")
+
+    div.classList.add("lista","div") 
+    div.appendChild(a)
+
+    a.setAttribute("href",`home-filme.html?id=${idFilme}`)
+    a.appendChild(img)
+
+    img.setAttribute("src",`https://image.tmdb.org/t/p/w300${posterPath}`)
+
+    main.appendChild(div)
+    
+}
+
+
+// Aplicando evento de input para pesquisa
 if(input) 
 {
     for (let x = 0; x < input.length; x ++) 
@@ -57,6 +85,16 @@ if(input)
 
             if (event.key === "Enter") 
             {
+                const divAtuais = document.getElementsByClassName("div")
+
+                if (divAtuais)  // remover a pesquisa atual
+                {
+                    for (let y = 0; y < divAtuais.length; y ++)
+                    {
+                        divAtuais[y].style.display = 'none'
+                    }
+                }
+
                 const movies = await getFilme()
                 const pesquisa = input[x].value.toLowerCase()
                 let ids = []
@@ -76,20 +114,7 @@ if(input)
                     {
                         if (window.location.pathname == '/gitHub/projeto-douma/search.html')
                         {
-                            const main = document.getElementById("main-search")
-                            let div = document.createElement("div") 
-                            let a = document.createElement("a")
-                            let img = document.createElement("img")
-
-                            div.classList.add("lista") 
-                            div.appendChild(a)
-
-                            a.setAttribute("href",`home-filme.html?id=${movies[i].id}`)
-                            a.appendChild(img)
-
-                            img.setAttribute("src",`https://image.tmdb.org/t/p/w300${movies[i].poster_path}`)
-
-                            main.appendChild(div)
+                            addElementos(movies[i].id, movies[i].poster_path)
                         }
                         else
                         {
@@ -105,16 +130,35 @@ if(input)
                 if (ids.length !== 0) // Mandando id dos filmes pesquisado para o localStore
                 {
                     const idString = JSON.stringify(ids);
-                    localStorage.setItem("ids", idString);
+                    localStorage.setItem('idPesquisa', idString);
 
-                    window.location.href = 'search.html'                    
+                   window.location.href = 'search.html'                  
                 }
             } 
         })
     }
 }
-    
 
+
+// EVENTO: pega os dados do localStorage e apresenta o resultado da pesquisa
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Verificar a URL da página atual
+    if (window.location.pathname === '/gitHub/projeto-douma/search.html') 
+    {
+        const ids = JSON.parse(localStorage.getItem('idPesquisa'))
+    
+        console.log(ids)
+        ids.forEach ( async id => {
+
+            let filme = await apiTmdb.getMovieId(id)
+
+            addElementos(filme.id, filme.poster_path)
+        })   
+    }
+});
+
+    
 
 // EVENTO de botões de rolagem horizontal
 const rolagem = (bottons, imgs, atual) => {
