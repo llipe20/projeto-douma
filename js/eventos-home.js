@@ -3,6 +3,28 @@ import apiTmdb from "./api-tmdb.js";
 
 export { showPlay, rolagem, trailer }
 
+
+// EVENTO DE JANELA MODAL (dialog)
+var janelas = document.querySelectorAll(".dialog")
+console.log(janelas)
+
+const openModal = () => {
+
+    if(janelas)
+    {
+        janelas.forEach( janela => {
+            janela.style.display = 'flex'
+        
+            setTimeout(() => {
+                janela.style.display = 'none'
+               
+            }, 2000)
+        })
+    }
+}
+
+
+
 // EVENTO do botão de pesquisa
 var lupa = document.getElementById("botton-open")
 var input = document.getElementsByClassName("input-search")
@@ -141,12 +163,25 @@ if(input)
                 else
                 {
                     // dialog
-                    
+                    openModal()
+
                 }
             } 
         })
+        
+        // EVENTO apagar valor de input
+        const btnClear = document.getElementById("botton-clear")
+
+        if(btnClear)
+        {
+            btnClear.addEventListener("click", () => {
+
+                input[x].value = ''
+            })
+        }
     }
 }
+
 
 
 // EVENTO: pega os dados do localStorage e apresenta o resultado da pesquisa
@@ -157,12 +192,18 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         const ids = JSON.parse(localStorage.getItem('idPesquisa'))
 
-        ids.forEach ( async id => {
+        if(ids.length == 0)
+        {
+            openModal()  // dialog
+        }
+        else
+        {
+            ids.forEach ( async id => {
 
-            let filme = await apiTmdb.getMovieId(id)
-
-            addElementos(filme.id, filme.poster_path)
-        })   
+                let filme = await apiTmdb.getMovieId(id)
+                addElementos(filme.id, filme.poster_path)
+            })
+        }
     }
 });
 
@@ -274,3 +315,4 @@ if (voltar)
         window.location.href = "index.html"
     })
 }
+
