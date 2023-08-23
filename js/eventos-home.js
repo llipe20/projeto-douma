@@ -5,18 +5,17 @@ export { showPlay, rolagem, trailer }
 
 // EVENTO do botão de pesquisa
 var lupa = document.getElementById("botton-open")
-var input = document.getElementById("input-search")
+var input = document.getElementsByClassName("input-search")
 var close = document.getElementById("botton-close")
 var boxSearch = document.getElementById("box-search")
 
-// abrir barra
-
+// abrir barra de pesquisa
 if (lupa) 
 {
     lupa.addEventListener("click", () => {
 
-    input.classList.remove("invisible")
-    input.focus()
+    input[0].classList.remove("invisible")
+    input[0].focus()
     close.classList.remove("invisible")
     lupa.classList.add("invisible")
 
@@ -25,13 +24,12 @@ if (lupa)
     // fechar barra
     close.addEventListener("click", () => {
 
-        input.value = ''
-        input.classList.add("invisible")
+        input[0].value = ''
+        input[0].classList.add("invisible")
         close.classList.add("invisible")
         lupa.classList.remove("invisible")
     })
 }
-
 
 // pegar todos os filmes da API
 const getFilme = async () => {
@@ -49,59 +47,73 @@ const getFilme = async () => {
 }
 
 
-// EVENTO para filtar a pesquisa e retornar respostas
-
-if(input)
+// EVENTO DE PESQUISA
+if(input) 
 {
-    input.addEventListener("keyup", async (event) => {
-
-    if (event.key === "Enter") 
+    for (let x = 0; x < input.length; x ++) 
     {
-        const movies = await getFilme()
-        const pesquisa = input.value.toLowerCase()
-        let ids = []
+        // filtar a pesquisa e retornar respostas
+        input[x].addEventListener("keyup", async (event) => {
 
-        for (let i = 0; i < movies.length; i++)
-        {
-            let movie = await movies[i].title.toLowerCase()
-
-            if (movie.includes(pesquisa))
+            if (event.key === "Enter") 
             {
-                if (window.location.pathname == 'search.html')
+                const movies = await getFilme()
+                const pesquisa = input[x].value.toLowerCase()
+                let ids = []
+
+                for (let i = 0; i < movies.length; i++)
                 {
-                    let div = document.createElement("div") 
-                    let a = document.createElement("a")
-                    let img = document.createElement("img")
+                    let a = movies[i].title
 
-                    div.classList.add("lista") 
-                    div.appendChild(a)
+                    if (a === undefined)
+                    {
+                        a =  movies[i +1].title
+                    }
 
-                    a.setAttribute("src",`home-filme.html?id=${movie.id}`)
-                    a.appendChild(img)
+                    let movieTitle = a.toLowerCase()
 
-                    img.setAttribute("src",`https://image.tmdb.org/t/p/w300${movie.poster_path}`)
+                    if (movieTitle.includes(pesquisa))
+                    {
+                        if (window.location.pathname == '/gitHub/projeto-douma/search.html')
+                        {
+                            const main = document.getElementById("main-search")
+                            let div = document.createElement("div") 
+                            let a = document.createElement("a")
+                            let img = document.createElement("img")
+
+                            div.classList.add("lista") 
+                            div.appendChild(a)
+
+                            a.setAttribute("href",`home-filme.html?id=${movies[i].id}`)
+                            a.appendChild(img)
+
+                            img.setAttribute("src",`https://image.tmdb.org/t/p/w300${movies[i].poster_path}`)
+
+                            main.appendChild(div)
+                        }
+                        else
+                        {
+                            ids.push(movies[i].id)
+                        }
+                    }
+                    else
+                    {
+                        continue 
+                    }
                 }
-                else
+                
+                if (ids.length !== 0) // Mandando id dos filmes pesquisado para o localStore
                 {
-                    ids.push(movie.id)
-                }
-            }
-            else
-            {
-                continue 
-            }
-        }
-        
-        if (ids !== '') // Mandando id dos filmes pesquisado para o localStore
-        {
-            const idString = JSON.stringify(ids);
-            localStorage.setItem("ids", idString);
+                    const idString = JSON.stringify(ids);
+                    localStorage.setItem("ids", idString);
 
-            window.location.href = 'search.thml'
-        }
-    } 
-})
+                    window.location.href = 'search.html'                    
+                }
+            } 
+        })
+    }
 }
+    
 
 
 // EVENTO de botões de rolagem horizontal
@@ -156,7 +168,7 @@ const scrollNav = () => {
             close.style.backgroundColor = 'transparent'
 
             close.style.color = 'white'
-            input.style.color = 'white'
+            input[0].style.color = 'white'
         } 
         else 
         {
@@ -166,7 +178,7 @@ const scrollNav = () => {
             boxSearch.style.backgroundColor = 'white'
 
             close.style.color = 'black'
-            input.style.color = 'black'
+            input[0].style.color = 'black'
         }
     });
 }
