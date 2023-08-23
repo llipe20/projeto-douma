@@ -75,5 +75,9 @@ h1 {
     background-color: rgba(0, 0, 157, 0.659);
 }
 
+.dialog {
+    left: 80%;
+    top: 20%;
+}
 
 

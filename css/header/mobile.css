@@ -71,3 +71,8 @@ h1 {
     height: 45px;
     width: 45px;
 }
+
+.dialog {
+    left: 50%;
+    top: 15%;
+}

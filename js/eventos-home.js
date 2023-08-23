@@ -84,10 +84,11 @@ if(input)
         input[x].addEventListener("keyup", async (event) => {
 
             if (event.key === "Enter") 
-            {
+            {   
+                // remover a pesquisa atual
                 const divAtuais = document.getElementsByClassName("div")
 
-                if (divAtuais)  // remover a pesquisa atual
+                if (divAtuais)  
                 {
                     for (let y = 0; y < divAtuais.length; y ++)
                     {
@@ -95,6 +96,7 @@ if(input)
                     }
                 }
 
+                // buscando os filmes
                 const movies = await getFilme()
                 const pesquisa = input[x].value.toLowerCase()
                 let ids = []
@@ -116,10 +118,7 @@ if(input)
                         {
                             addElementos(movies[i].id, movies[i].poster_path)
                         }
-                        else
-                        {
                             ids.push(movies[i].id)
-                        }
                     }
                     else
                     {
@@ -130,9 +129,19 @@ if(input)
                 if (ids.length !== 0) // Mandando id dos filmes pesquisado para o localStore
                 {
                     const idString = JSON.stringify(ids);
+
+                    localStorage.clear()
                     localStorage.setItem('idPesquisa', idString);
 
-                   window.location.href = 'search.html'                  
+                    if (window.location.pathname !== '/gitHub/projeto-douma/search.html')
+                    {
+                        window.location.href = 'search.html'          
+                    }
+                }
+                else
+                {
+                    // dialog
+                    
                 }
             } 
         })
@@ -147,8 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname === '/gitHub/projeto-douma/search.html') 
     {
         const ids = JSON.parse(localStorage.getItem('idPesquisa'))
-    
-        console.log(ids)
+
         ids.forEach ( async id => {
 
             let filme = await apiTmdb.getMovieId(id)

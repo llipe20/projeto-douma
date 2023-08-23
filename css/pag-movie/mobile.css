@@ -63,3 +63,8 @@ a > img {
     height: 200px;
     transform: scale(0.9);
 }
+
+.dialog {
+    left: 50%;
+    top: 15%;
+}
