@@ -39,18 +39,22 @@ const listAll = async () => {
     // Adicione um ouvinte para o evento resize
     window.addEventListener('resize', () => {
 
-    const width = window.innerWidth;
+        const width = window.innerWidth;
 
-    if(width > 800)
-    {
-        // imagem desktop
-        fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
-    }
-    else
-    {
-        // imagem mobile
-        fundo.style.background = `url(https://image.tmdb.org/t/p/w500${filmeEscolhido.poster_path})`
-    }
+        if(width > 1540)
+        {
+            fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.poster_path})`
+        }
+        else if(width < 1540 && width > 800)
+        {
+            // imagem desktop
+            fundo.style.background = `url(./backdrop/tmdb--${valor}.jpg)`
+        }
+        else
+        {
+            // imagem mobile
+            fundo.style.background = `url(https://image.tmdb.org/t/p/w780${filmeEscolhido.poster_path})`
+        }
     })
 
     let year = ''
