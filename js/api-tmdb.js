@@ -68,5 +68,114 @@ export default {
         const dados = await response.json()
     
         return dados
+    },
+
+    getInfoAdd : () => {
+
+        return {
+                
+        add : [
+                {
+                    name : 'homem aranha',
+                    trailer : '_4is7I_ZxTg',
+                    backdrop : ''
+                },
+                {
+                    name : 'elementos',
+                    trailer : 'XpZterwuuc4',
+                    backdrop : ''
+                },
+                {
+                    name : 'oppenhimer',
+                    trailer : 'F3OxA9Cz17A&t=9s',
+                    backdrop : ''
+                },
+                {
+                    name : 'ashoka',
+                    trailer : 'ZLW2jkd6E7g',
+                    backdrop : ''
+                },
+                {
+                    name : 'barbie',
+                    trailer : 'CeB-HLnkiKQ',
+                    backdrop : ''
+                },
+                {
+                    name : 'agente stone',
+                    trailer : 'ay5vLVKg_FM',
+                    backdrop : ''
+                },
+                {
+                    name : 'que horas te pego?',
+                    trailer : 'vhwr4vc_GY0 ',
+                    backdrop : ''
+                },
+                {
+                    name : 'besouro azul',
+                    trailer : 'IZw2slPIoGs&t=12s',
+                    backdrop : ''
+                },
+                {
+                    name : 'the flash',
+                    trailer : 'zrtVOZ4YPFw',
+                    backdrop : ''
+                },
+                {
+                    name : 'guardioes da galaxia',
+                    trailer : '5UVaA6SGRZA',
+                    backdrop : ''
+                },
+                {
+                    name : 'rei macaco',
+                    trailer : 'ZEYtw5uWRG8',
+                    backdrop : ''
+                },
+                {
+                    name : 'megatubarao',
+                    trailer : '7Hkedrl3xeE',
+                    backdrop : ''
+                },
+                {
+                    name : 'velozes e furiosos',
+                    trailer : 'ByGA7aWSxW4',
+                    backdrop : ''
+                },
+                {
+                    name : 'vermelho, branco e sangue azul',
+                    trailer : 'CeB-HLnkiKQ',
+                    backdrop : ''
+                },
+                {
+                    name : 'sobrenatural',
+                    trailer : 'e8-GtGmlu18',
+                    backdrop : ''
+                },
+                {
+                    name : 'gabar',
+                    trailer : 'vhwr4vc_GY0&t=5s',
+                    backdrop : ''
+                },
+                {
+                    name : 'transformer',
+                    trailer : '-5K0XaN0UV8',
+                    backdrop : ''
+                },
+                {
+                    name : 'one piece',
+                    trailer : 'YC8SLpnxsL4',
+                    backdrop : ''
+                },
+                {
+                    name : 'ruby marinha',
+                    trailer : '_PDhT5sYk00',
+                    backdrop : ''
+                },
+                {
+                    name : 'toc toc toc echo da morte',
+                    trailer : 'Mwd_c2H7YHs',
+                    backdrop : ''
+                },
+            ]
+        }
     }
 }

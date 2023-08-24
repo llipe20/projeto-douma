@@ -25,6 +25,7 @@ const listAll = async () => {
 
     // pegando um filme aleatório 
     const filmes = lista[0].movie.results
+    const info = Tmdb.getInfoAdd() // infomações adicionais
 
     const valor = Math.floor(Math.random() * (filmes.length - 1))
     const filmeEscolhido = filmes[valor]
@@ -33,10 +34,7 @@ const listAll = async () => {
 
     // Aplicação do botton play
     showPlay(filmeEscolhido.id)
-    trailer('IZw2slPIoGs')
-
-    fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
-
+    trailer(info.add[valor].trailer)
 
     // Adicione um ouvinte para o evento resize
     window.addEventListener('resize', () => {
@@ -46,20 +44,31 @@ const listAll = async () => {
     if(width > 800)
     {
         // imagem desktop
-        console.log('desktop' + width)
+        fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
     }
     else
     {
         // imagem mobile
-        console.log('mobile' + width)
+        fundo.style.background = `url(https://image.tmdb.org/t/p/w500${filmeEscolhido.poster_path})`
     }
     })
-    
-    title.textContent = `${filmeEscolhido.title}` 
-    ponto.textContent = `${filmeEscolhido.vote_average.toFixed(1)} pontos`
 
-    // ano
-    const year = new Date(`${filmeEscolhido.release_date}`)
+    let year = ''
+    switch (filmeEscolhido.media_type)
+    {
+        case 'movie':
+
+            title.textContent = `${filmeEscolhido.title}` 
+            year = new Date(`${filmeEscolhido.release_date}`)
+        break
+
+        case 'tv':
+
+            title.textContent = `${filmeEscolhido.name}` 
+            year = new Date(`${filmeEscolhido.first_air_date}`)
+    }
+    
+    ponto.textContent = `${filmeEscolhido.vote_average.toFixed(1)} pontos`
     ano.textContent = `${year.getFullYear()}`
 
     // idioma
