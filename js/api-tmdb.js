@@ -1,3 +1,4 @@
+import { trailer } from "./eventos-home.js";
 
 const chave = 'aaee40741a8339ae752e5fefd0c915b9'; // chave de acesso a API
 const base = 'https://api.themoviedb.org/3'; // parte da url das requisições

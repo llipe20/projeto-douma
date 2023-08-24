@@ -1,13 +1,11 @@
 
 import apiTmdb from "./api-tmdb.js";
 
-export { showPlay, rolagem, trailer }
+export { showPlay, rolagem, trailer}
 
 
 // EVENTO DE JANELA MODAL (dialog)
 var janelas = document.querySelectorAll(".dialog")
-console.log(janelas)
-
 const openModal = () => {
 
     if(janelas)
@@ -316,3 +314,25 @@ if (voltar)
     })
 }
 
+const a = () => {
+      // Adicione um ouvinte para o evento resize
+    window.addEventListener('resize', () => {
+
+    const width = window.innerWidth;
+
+    if(width > 800)
+    {
+        // imagem desktop
+        console.log('desktop' + width)
+    }
+    else
+    {
+        // imagem mobile
+        console.log('mobile' + width)
+    }
+    })
+}
+  
+  
+  
+  
