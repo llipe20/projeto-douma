@@ -29,7 +29,7 @@ body, html {
 }
 
 .background-horizontal {
-    background: linear-gradient(to top, black 5%, transparent 95%);
+    background: linear-gradient(to top, black 10%, transparent 90%);
     align-items: flex-start;
     justify-content: center;
     position: relative;

@@ -6,7 +6,7 @@
 
 .header {
     background-size: cover;
-    background-position: right center;
+    background-position: center center;
 }
 
 .background-vertical {
@@ -23,7 +23,7 @@
 }
 
 .box-movie {
-    justify-content: flex-end;
+    justify-content: center;
     height: 480px;
     padding-left: 15px;
 }

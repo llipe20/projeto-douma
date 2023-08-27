@@ -1,5 +1,5 @@
 import Tmdb from "./api-tmdb.js";
-import {rolagem, showPlay, trailer} from "./eventos-home.js"; // funções de eventos
+import {rolagem, showPlay} from "./eventos-home.js"; // funções de eventos
 
 
 
@@ -25,7 +25,6 @@ const listAll = async () => {
 
     // pegando um filme aleatório 
     const filmes = lista[0].movie.results
-    const info = Tmdb.getInfoAdd() // infomações adicionais
 
     const valor = Math.floor(Math.random() * (filmes.length - 1))
     const filmeEscolhido = filmes[valor]
@@ -34,21 +33,27 @@ const listAll = async () => {
 
     // Aplicação do botton play
     showPlay(filmeEscolhido.id)
-    trailer(info.add[valor].trailer)
+
+    const width = window.innerWidth;
+
+    if(width > 800)
+    {
+        fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
+    }
+    else
+    {
+        // imagem mobile
+        fundo.style.background = `url(https://image.tmdb.org/t/p/w780${filmeEscolhido.poster_path})`
+    }
 
     // Adicione um ouvinte para o evento resize
     window.addEventListener('resize', () => {
 
         const width = window.innerWidth;
 
-        if(width > 1540)
+        if(width > 800)
         {
-            fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.poster_path})`
-        }
-        else if(width < 1540 && width > 800)
-        {
-            // imagem desktop
-            fundo.style.background = `url(./backdrop/tmdb--${valor}.jpg)`
+            fundo.style.background = `url(https://image.tmdb.org/t/p/original${filmeEscolhido.backdrop_path})`
         }
         else
         {
