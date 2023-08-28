@@ -26,12 +26,13 @@ h2.title-section, .paragrafo {
 }
 
 .box-lista-fixa {
-    background-color: aliceblue;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 90vw;
+    overflow-x: auto;
+    gap: 10px;
 }
 
 ul.box-rolagem-lista {
@@ -46,7 +47,7 @@ li {
     list-style-type: none;
 }
 
-.box-rolagem-lista::-webkit-scrollbar {
+.box-lista-fixa::-webkit-scrollbar, .box-rolagem-lista::-webkit-scrollbar {
     display: none;
 }
 
@@ -80,7 +81,7 @@ li {
 }
 
 .right {
-    left: 96%;
+    left: 95%;
 }
 
 /* FOOTER */

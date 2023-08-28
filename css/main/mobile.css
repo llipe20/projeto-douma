@@ -16,6 +16,10 @@ h2.title-section {
     font-size: 1.5em;
 }
 
+.right {
+    left: 92%;
+}
+
 ul.box-rolagem-lista {
     height: auto;
 }
