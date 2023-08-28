@@ -54,6 +54,7 @@ body, html {
 }
 
 .material-symbols-outlined {
+    cursor: pointer;
     font-size: 1.6em;
 }
 

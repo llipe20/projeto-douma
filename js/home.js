@@ -33,7 +33,6 @@ const listAll = async () => {
 
     // Aplicação do botton play
     showPlay(filmeEscolhido.id)
-
     const width = window.innerWidth;
 
     if(width > 800)
@@ -116,12 +115,12 @@ const listAll = async () => {
     
         // botões da esquerda
         var bottonLeft = document.createElement("button")
-        bottonLeft.setAttribute("id","botton-left")
+        bottonLeft.setAttribute("id",`botton-left${i}`)
         bottonLeft.classList.add("botton-absoluto","left")
     
         // botões da direita
         var bottonRight = document.createElement("button")
-        bottonRight.setAttribute("id","botton-right")
+        bottonRight.setAttribute("id",`botton-right${i}`)
         bottonRight.classList.add("botton-absoluto","right")
     
         // emoj da esquerda
@@ -176,6 +175,7 @@ const listAll = async () => {
                 boxFixo.appendChild(bottonRight)     // botão da direita
                     bottonRight.appendChild(spanRight)
                         spanRight.textContent = ("chevron_right")
+        rolagem(i)
     } 
 }
 

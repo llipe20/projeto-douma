@@ -32,11 +32,11 @@ h2.title-section {
     font-size: 1.5em;
 }
 
-#botton-left {
+.left {
     left: -1%;
 }
 
-#botton-right {
+.right {
     left: 98%;
 }
 

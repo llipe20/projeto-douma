@@ -29,6 +29,7 @@ import Tmdb from "./api-tmdb.js"
 
   cartaz.setAttribute("src",`https://image.tmdb.org/t/p/w300${filme.poster_path}`)
   views.textContent = `${filme.popularity} visualizações`
+
   title.textContent = `${filme.title}`
   ponto.textContent = `${filme.vote_average.toFixed(1)} pontos`
 
